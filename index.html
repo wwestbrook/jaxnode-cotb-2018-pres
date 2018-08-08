@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BUILDING WEB APPS WITH VUE.JS</title>
+    <meta charset="utf-8">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+        @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+  
+        body {
+          font-family: 'Droid Serif';
+        }
+        h1, h2, h3 {
+          font-family: 'Yanone Kaffeesatz';
+          font-weight: 400;
+          margin-bottom: 0;
+        }
+        .remark-slide-content h1 { font-size: 3em; }
+        .remark-slide-content h2 { font-size: 2em; }
+        .remark-slide-content h3 { font-size: 1.6em; }
+        .footnote {
+          position: absolute;
+          bottom: 3em;
+        }
+        li p { line-height: 1.25em; }
+        .red { color: #fa0000; }
+        .large { font-size: 2em; }
+        a, a > code {
+          color: rgb(249, 38, 114);
+          text-decoration: none;
+        }
+        code {
+          background: #e7e8e2;
+          border-radius: 5px;
+        }
+        .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+        .remark-code-line-highlighted     { background-color: #373832; }
+        .pull-left {
+          float: left;
+          width: 47%;
+        }
+        .pull-right {
+          float: right;
+          width: 47%;
+        }
+        .pull-right ~ p {
+          clear: both;
+        }
+        #slideshow .slide .content code {
+          font-size: 0.8em;
+        }
+        #slideshow .slide .content pre code {
+          font-size: 0.9em;
+          padding: 15px;
+        }
+        .inverse {
+          background: #272822;
+          color: #777872;
+          text-shadow: 0 0 20px #333;
+        }
+        .inverse h1, .inverse h2 {
+          color: #f3f3f3;
+          line-height: 0.8em;
+        }
+  
+        /* Slide-specific styling */
+        #slide-inverse .footnote {
+          bottom: 12px;
+          left: 20px;
+        }
+        #slide-how .slides {
+          font-size: 0.9em;
+          position: absolute;
+          top:  151px;
+          right: 140px;
+        }
+        #slide-how .slides h3 {
+          margin-top: 0.2em;
+        }
+        #slide-how .slides .first, #slide-how .slides .second {
+          padding: 1px 20px;
+          height: 90px;
+          width: 120px;
+          -moz-box-shadow: 0 0 10px #777;
+          -webkit-box-shadow: 0 0 10px #777;
+          box-shadow: 0 0 10px #777;
+        }
+        #slide-how .slides .first {
+          background: #fff;
+          position: absolute;
+          top: 20%;
+          left: 20%;
+          z-index: 1;
+        }
+        #slide-how .slides .second {
+          position: relative;
+          background: #fff;
+          z-index: 0;
+        }
+  
+        /* Two-column layout */
+        .left-column {
+          color: #777;
+          width: 20%;
+          height: 92%;
+          float: left;
+        }
+          .left-column h2:last-of-type, .left-column h3:last-child {
+            color: #000;
+          }
+        .right-column {
+          width: 75%;
+          float: right;
+          padding-top: 1em;
+        }
+      </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+      name: inverse
+      layout: true
+      class: center, middle, inverse
+      ---
+      # Getting Started with DevOps
+      ## Agile + Continuous Integration + Continuous Delivery
+      .footnote[woodie westbrook]
+      ---
+      
+      layout: false
+      .left-column[
+      # Agenda
+      ]
+      .right-column[
+      - Introductions
+      - About me
+      - What is DevOps (and why should I care?)
+      - Going Agile
+      - Continuous Integration
+      - Continuous Delivery
+      - Demo (60% of the time it works everytime.)
+      ]
+      
+      ---
+      template: inverse
+      # about me
+      ---
+      class: middle
+      .left-column[
+      ## woodie westbrook
+      ]
+      
+      .right-column[
+      - Proud dad and husband
+      - Enterprise Architect at CIT Group
+      - Focus on ALM tools and teaching
+      - 20 years in software development
+      - Certified Scrum Developer, MS Solutions Expert
+      - Javascript Junkie
+      - Motorcycle Enthusiast
+      - Mountain Bike Fanatic
+      - Gamer
+      ]
+      
+      ---
+      template: inverse
+      ## woodie.westbrook@gmail.com
+      ---
+      template: inverse
+      # what is DevOps?
+      ---
+      
+      class: middle
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      There is no definitive definition for what constitutes DevOps.  It is still an evolving movement.  a few current definitions include:
+      ]
+      ---
+      class: middle
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      A culture, movement or practice that emphasizes the collaboration and communication of both software developers and other information-technology professionals while automating the process of software delivery and infrastructure
+      changes.  It aims at establishing a culture and environment where building, testing, and releasing software, can happen rapidly, frequently, and more reliably.
+      ]
+      ---
+      class: middle
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      The practice of operations and development engineers participating together in the entire service lifecycle,
+      from design through the development process to production support.
+      ]
+      ---
+      class: middle
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      Also characterized by operations staff making use many of the same techniques as developers for their systems work.
+      ]
+      ---
+      class: middle
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      a cross-disciplinary community of practice dedicated to the study of building, evolving and operating rapidly-changing resilient systems at scale.
+      ]
+      
+      ---
+      class: middle, center
+      .left-column[
+      ## DevOps is ..
+      ]
+      .right-column[
+      <img src="img\frydevops.jpg" width="70%"/>
+      ]
+      ---
+      class: middle, center
+      ## DevOps is hard to define....
+      ---
+      class: middle, center
+      ## DevOps is software engineering, testing, and operations working together to define and implement a process that allows applications to be rapidly built, tested, and released across environments continuously.
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      ]
+      ---
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      - less deployment failures
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      - less deployment failures
+      - all deployments are tested
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      - less deployment failures
+      - all deployments are tested
+      - new features are released faster
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      - less deployment failures
+      - all deployments are tested
+      - new features are released faster
+      - bugs get squashed faster
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps?
+      ]
+      .right-column[
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      with 50% of the failures.
+      <br/>
+      - continuous software delivery
+      - less deployment failures
+      - all deployments are tested
+      - new features are released faster
+      - bugs get squashed faster
+      - reduced cost and complexity of deployments
+      ]
+      ---
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      Making the shift to DevOps can be a challenging undertaking.  It requires the collaboration of teams that could have previously worked in isolation (or actively against each other)
+      and the adaptation of potentially new tools and methodologies.
+      <br/>
+      - a cultural shift within the organization
+      ]
+      ---
+      
+      class: middle, center
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      <img src="img\devopssimply.jpg" width="70%"/>
+      ]
+      
+      ---
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      Making the shift to DevOps can be a challenging undertaking.  It requires the collaboration of teams that could have previously worked in isolation (or actively against each other)
+      and the adaptation of potentially new tools and methodologies.
+      <br/>
+      - a cultural shift within the organization
+      - agile methodologies
+      ]
+      
+      ---
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### DevOps requires:
+      ]
+      .right-column[
+      <img src="img\drevildevops.png" width="70%"/>
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      Making the shift to DevOps can be a challenging undertaking.  It requires the collaboration of teams that could have previously worked in isolation (or actively against each other)
+      and the adaptation of potentially new tools and methodologies.
+      <br/>
+      - a cultural shift within the organization
+      - agile methodologies
+      ]
+      ---
+      
+      template: inverse
+      ## a brief interlude to evangelize Scrum....
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### Why DevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      Making the shift to DevOps can be a challenging undertaking.  It requires the collaboration of teams that could have previously worked in isolation (or actively against each other)
+      and the adaptation of potentially new tools and methodologies.
+      <br/>
+      - a cultural shift within the organization
+      - agile methodologies
+      - continuous integration (yes, with automated testing)
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ]
+      .right-column[
+      Making the shift to DevOps can be a challenging undertaking.  It requires the collaboration of teams that could have previously worked in isolation (or actively against each other)
+      and the adaptation of potentially new tools and methodologies.
+      <br/>
+      - a cultural shift within the organization
+      - agile methodologies
+      - continuous integration (yes, with automated testing)
+      - continuous delivery
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:
+      <br/>
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:
+      <br/>
+      <img src="img/automation.png" width="80%"/>
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      - build
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference: automation.
+      <br/>
+      - develop
+      - build
+      - integrate
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      - build
+      - integrate
+      - test
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      - build
+      - integrate
+      - test
+      - deploy
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      - build
+      - integrate
+      - test
+      - deploy
+      - operate
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### DevOps is ..
+      ### WhyDevOps
+      ### DevOps requires:
+      ### DevOps Process:
+      ]
+      .right-column[
+      The DevOps process looks similiar to many other development and release methodologies with one major difference:  automation.
+      <br/>
+      - develop
+      - build
+      - integrate
+      - test
+      - deploy
+      - operate
+      - repeat
+      ]
+      ---
+      
+      template: inverse
+      # continuous integration
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler
+      <br/>
+      
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      - unit tests run on with build
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      - unit tests run on with build
+      - every commit/merge triggers the build
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      - unit tests run on with build
+      - every commit/merge triggers the build
+      - fix the broken build fast
+      ]
+      ---
+      
+      class: middle, center
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      <img src="img/siren.jpg" />
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      - unit tests run on with build
+      - every commit/merge triggers the build
+      - fix the broken build fast
+      - make it easy for all team members to get the latest code
+      ]
+      ---
+      
+      class: middle
+      .left-column[
+      ### Continuous Integration
+      ]
+      .right-column[
+      "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
+      leading to multiple integrations per day. Each integration is verified by
+      an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
+      <br/>
+      - maintain a single integration branch/repo
+      - automated build
+      - unit tests run on with build
+      - every commit/merge triggers the build
+      - fix the broken build fast
+      - make it easy for all team members to get the latest code
+      - transparency
+      ]
+      ---
+      
+      template: inverse
+      # continuous delivery
+      ---
+      
+      template: inverse
+      # ok, let's demo!
+      ---
+      
+      ---
+      http://theagileadmin.com/what-is-devops/
+      https://en.wikipedia.org/wiki/DevOps
+      
+      
+      ---
+      
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
