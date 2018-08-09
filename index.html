@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BUILDING WEB APPS WITH VUE.JS</title>
+    <title>DevOps - MS + JS</title>
     <meta charset="utf-8">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
@@ -123,42 +123,65 @@
       layout: true
       class: center, middle, inverse
       ---
-      # Getting Started with DevOps
-      ## Agile + Continuous Integration + Continuous Delivery
+      # Continuous Integration and Delivery for JavaScript Apps with VSTS
+      ### JS + Node + + VS Code + VSTS + Azure + CI + CD = JS DevOps Awesomeness
       .footnote[woodie westbrook]
       ---
       
       layout: false
+      class: middle
       .left-column[
       # Agenda
       ]
       .right-column[
       - Introductions
       - About me
-      - What is DevOps (and why should I care?)
-      - Going Agile
+      - Brief intro to DevOps (and why should I care?)
       - Continuous Integration
       - Continuous Delivery
+      - Tools
       - Demo (60% of the time it works everytime.)
+      - Q & A
       ]
       
       ---
-      template: inverse
+      class: center, middle, inverse
       # about me
+
       ---
       class: middle
       .left-column[
+      <img src="img\head-shot.jpg" width="100%"/>
+      ## woodie westbrook
+      ]
+      
+      .right-column[
+      I been writing applications since the eighties starting out on the venerable Tandy TRS-80. Since then I have worked across many sectors of government and 
+      private industry specializing in architecture, web applications, DevOps, and agile development. Currently I am the Director of IT at BlueStar Retirement Services. 
+      <br />
+      <br />
+      I am a US Army Ranger and Veteran, college drop-out, American Mensa member, a brutal pragmatist with a lack of self-preservation instincts and a propensity for injury. 
+      I love good science fiction, craft beer, and going really fast on anything with two wheels. When not working I enjoy Nerf gun wars with his son, movie night with his wife, 
+      long walks with his Doberman, and off-road motorcycle racing.
+      ]
+      
+
+      ---
+      class: middle
+      .left-column[
+      <img src="img\head-shot.jpg" width="100%"/>
       ## woodie westbrook
       ]
       
       .right-column[
       - Proud dad and husband
-      - Enterprise Architect at CIT Group
+      - Doberman lounger
+      - Director of IT at BlueStar Retirement Services
       - Focus on ALM tools and teaching
-      - 20 years in software development
+      - 24 years in software development
       - Certified Scrum Developer, MS Solutions Expert
       - Javascript Junkie
-      - Motorcycle Enthusiast
+      - Motorcycle Racing Enthusiast
       - Mountain Bike Fanatic
       - Gamer
       ]
@@ -168,7 +191,7 @@
       ## woodie.westbrook@gmail.com
       ---
       template: inverse
-      # what is DevOps?
+      # Brief intro to DevOps
       ---
       
       class: middle
@@ -235,7 +258,7 @@
       ### Why DevOps?
       ]
       .right-column[
-      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2014 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
+      Organizations moving to DevOps simply get more done.  According to Puppet Labs 2017 State of DevOps survey DevOps organizations deploy 30x more frequently than thier peers
       with 50% of the failures.
       ]
       ---
@@ -585,7 +608,7 @@
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -598,7 +621,7 @@
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -611,7 +634,7 @@
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -625,7 +648,7 @@
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -633,14 +656,14 @@
       an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
       <br/>
       - maintain a single integration branch/repo
-      - automated build
+      - automated build process
       - unit tests run on with build
       ]
       ---
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -648,7 +671,7 @@
       an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
       <br/>
       - maintain a single integration branch/repo
-      - automated build
+      - automated build process
       - unit tests run on with build
       - every commit/merge triggers the build
       ]
@@ -656,7 +679,7 @@
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -664,25 +687,17 @@
       an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
       <br/>
       - maintain a single integration branch/repo
-      - automated build
+      - automated build process
       - unit tests run on with build
       - every commit/merge triggers the build
       - fix the broken build fast
       ]
-      ---
-      
-      class: middle, center
-      .left-column[
-      ### Continuous Integration
-      ]
-      .right-column[
-      <img src="img/siren.jpg" />
-      ]
+
       ---
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -690,17 +705,18 @@
       an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
       <br/>
       - maintain a single integration branch/repo
-      - automated build
+      - automated build process
       - unit tests run on with build
       - every commit/merge triggers the build
       - fix the broken build fast
       - make it easy for all team members to get the latest code
       ]
+
       ---
       
       class: middle
       .left-column[
-      ### Continuous Integration
+      ## Continuous Integration
       ]
       .right-column[
       "Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily -
@@ -708,19 +724,166 @@
       an automated build (including test) to detect integration errors as quickly as possible." - martin fowler 2006
       <br/>
       - maintain a single integration branch/repo
-      - automated build
+      - automated build process
       - unit tests run on with build
       - every commit/merge triggers the build
       - fix the broken build fast
       - make it easy for all team members to get the latest code
       - transparency
       ]
+
       ---
       
       template: inverse
       # continuous delivery
+
       ---
       
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ]
+      .right-column[
+      "Continuous Delivery is a software development discipline where you build software in such a way that the software can be released to production at any time." - martin fowler 2013
+      <br/>
+      - Your software is deployable throughout its lifecycle
+      - Your team prioritizes keeping the software deployable over working on new features
+      - Anybody can get fast, automated feedback on the production readiness of their systems any time somebody makes a change to them
+      - You can perform push-button deployments of any version of the software to any environment on demand
+      ]
+
+      ---
+      
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ].right-column[
+      Continuous Delivery is sometimes confused with Continuous Deployment. Continuous Deployment means that every change goes through the pipeline and automatically gets put into production, 
+      resulting in many production deployments every day. 
+      <br/>
+      <br/>
+      Continuous Delivery just means that you are able to do frequent deployments but may choose not to do it, usually due to businesses preferring 
+      a slower rate of deployment. In order to do Continuous Deployment you must be doing Continuous Delivery.
+
+      .footnote[martin fowler 2013]
+      ]
+
+      ---
+      
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### Reduced Deployment Risk
+      ].right-column[
+      - Since you are deploying smaller changes, there's less to go wrong and it's easier to fix should a problem appear.
+      .footnote[martin fowler 2013]
+      ]
+      
+      ---
+      
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### Reduced Deployment Risk
+      ### Believeable Progress
+      ].right-column[
+      - Since you are deploying smaller changes, there's less to go wrong and it's easier to fix should a problem appear.
+      <br/>
+      <br/>
+      - We tend to track progress by tracking work done. If "done" means "developers declare it to be done" that's much less believable than if it's actually deployed
+      .footnote[martin fowler 2013]
+      ]
+      
+      ---
+      
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### Reduced Deployment Risk
+      ### Believeable Progress
+      ### User Feedback
+      ].right-column[
+      - Since you are deploying smaller changes, there's less to go wrong and it's easier to fix should a problem appear.
+      <br/>
+      <br/>
+      - We tend to track progress by tracking work done. If "done" means "developers declare it to be done" that's much less believable than if it's actually deployed
+      <br/>
+      <br/>
+      - The biggest risk to any software effort is that you end up building something that isn't useful. The earlier and more frequently you get working software in front of real users, the quicker you get feedback to find out how valuable it really is.
+      .footnote[martin fowler 2013]
+      ]
+
+      ---
+
+      template: inverse
+      # tools
+      ---
+
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### VSTS
+      ].right-column[
+        - Full Application Life Cycle Mangement Tooling
+        <br/>
+        - Work, Build, Deploy, SCM
+        <br/>
+        - Built in package management 
+        <br/>
+        - Free for small teams(5), very affordable pricing after that.
+        <br/>
+      ]
+
+      ---
+
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### VSTS
+      ### Azure
+      ].right-column[
+        - SSAS / Cloud services of every variety
+        <br/>
+        - Free usage tiers for developers and MSDN / VS Subscribers
+        <br/>
+        - Not required but makes CD / CI easier 
+        <br/>
+      ]
+
+
+      ---
+
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### VSTS
+      ### Azure
+      ### VS Code
+      ].right-column[
+        - Free
+        <br/>
+        - Flexible
+        <br/>
+        - Is anyone not using it?
+        <br/>
+      ]
+
+
+      ---
+
+      class: middle
+      .left-column[
+      ## Continuous Delivery
+      ### VSTS
+      ### Azure
+      ### VS Code
+      ### Azure App Service Extension.
+      ].right-column[
+        - easy mode.  seriously.
+      ]
+
+      ---
+
       template: inverse
       # ok, let's demo!
       ---
